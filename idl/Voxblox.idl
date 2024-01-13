@@ -1,0 +1,32 @@
+#include "BasicDataType.idl"
+
+module voxblox_msgs_rtmros_bridge
+{
+  // see voxblox_msgs/Block
+  struct VoxbloxBlockIdl
+  {
+    long x_index;
+    long y_index;
+    long z_index;
+
+    sequence<long> data;
+  };
+
+  // see voxblox_msgs/Layer
+  struct VoxbloxLayerIdl
+  {
+    double voxel_size;
+    unsigned long voxels_per_side;
+    string layer_type;
+
+    octet action;
+
+    sequence<VoxbloxBlockIdl> blocks;
+  };
+
+  struct TimedVoxbloxLayer
+  {
+    RTC::Time tm;
+    VoxbloxLayerIdl data;
+  };
+};
