@@ -32,7 +32,7 @@ RTC::ReturnCode_t VoxbloxLayerROSBridge::onExecute(RTC::UniqueId ec_id){
     for(int i=0;i<this->m_inData_.data.blocks.length();i++){
       msg.blocks[i].x_index = this->m_inData_.data.blocks[i].x_index;
       msg.blocks[i].y_index = this->m_inData_.data.blocks[i].y_index;
-      msg.blocks[i].z_index = this->m_inData_.data.blocks[i].x_index;
+      msg.blocks[i].z_index = this->m_inData_.data.blocks[i].z_index;
       msg.blocks[i].data.resize(this->m_inData_.data.blocks[i].data.length());
       for(int j=0;j<this->m_inData_.data.blocks[i].data.length();j++){
 	msg.blocks[i].data[j] = this->m_inData_.data.blocks[i].data[j];
